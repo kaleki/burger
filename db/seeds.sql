@@ -1,1 +1,1 @@
-INSERT INTO burgers_db (burger_name, devoure) VALUES ("Jr Colombian Burger", true), ("Five Guys Burger", true), ("Big Mac", false);
+INSERT INTO burgers_db (burger_name, devoured) VALUES ("Jr Colombian Burger", true), ("Five Guys Burger", true), ("Big Mac", false);
