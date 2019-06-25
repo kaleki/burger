@@ -23,8 +23,9 @@ $(function(){
       });
 });
 $(function() {
-  $("./{{this.id}}?_method=PUT").on("click", function(event) {
-    var id = $(this).data("id");
+  $(".update-burger").on("submit", function(event) {
+    event.preventDefault();
+    var id = $(this).attr("value");
     var devouredBurger = $(this).data("devouredBurger");
 
     var newDevouredBurger = {
@@ -32,9 +33,10 @@ $(function() {
     };
 
     // Send the PUT request.
+    console.log(id)
     $.ajax("/api/burger/" + id, {
       type: "PUT",
-      data: newDevouredBurger
+      data: id
     }).then(
       function() {
         console.log("added burger to:", devouredBurger);

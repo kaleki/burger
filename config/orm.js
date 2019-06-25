@@ -26,7 +26,8 @@ var connection = require("../config/connection.js");
             });
       },
       updateOne: function(burger_id, callBack){
-          connection.query("UPDATE burgers SET ? WHERE ?", [{devoured: true}], [{id: burger_id}], function(err, result){
+          console.log(burger_id)
+          connection.query("UPDATE burgers SET devoured = ? WHERE id = ?", [true ,burger_id], function(err, result){
               if (err) throw err;
               callBack(result)
           });
