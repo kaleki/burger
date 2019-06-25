@@ -22,4 +22,24 @@ $(function(){
         );
       });
 });
+$(function() {
+  $("./{{this.id}}?_method=PUT").on("click", function(event) {
+    var id = $(this).data("id");
+    var devouredBurger = $(this).data("devouredBurger");
 
+    var newDevouredBurger = {
+      devoured: devouredBurger
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/burger/" + id, {
+      type: "PUT",
+      data: newDevouredBurger
+    }).then(
+      function() {
+        console.log("added burger to:", devouredBurger);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  })});

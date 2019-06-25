@@ -25,29 +25,41 @@
     <ul>
   {{#each burgers}}
     {{#unless devoured}}
-      <ul>{{burger_name}}</ul>
+      <ul>
+        {{this.id}}
+        {{this.burger_name}}
+         <form class="/{{this.id}}?_method=PUT" method="PUT">
+			          <button class="btn btn-success" type="submit">Devoure It!</button>
+			        </form>
+        </ul>
     {{/unless}}
   {{/each}}
 </ul>
 </div>
-  </div>
+  
+  
 
   <div align="right" class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
     <h3 align="right">Devoured</h3>
     <ul>
   {{#each burgers}}
-    {{#if devoured}}
-     <ul>{{burger_name}}</ul>
+    {{#if this.devoured}}
+     <ul>
+       {{this.id}}
+       {{this.burger_name}}</ul>
     {{/if}}
   {{/each}}
 </ul>
 </div>
+</div>
   </div>
-  <div align="center" class="col-md-4">
+   <div align="center" class="burger_pic">
+    <div class="col-md-2"></div>
       <br>
       <br>
-      <img src="http://vectips.com/wp-content/uploads/2016/02/25.jpg">
+      <img src="http://vectips.com/wp-content/uploads/2016/02/25.jpg" height="250px" width="250px">
     </div>
+ 
 
 
